@@ -1,4 +1,5 @@
 import React from 'react';
+import ProcessSection from '../components/ProcessSection';
 
 const PROJECTS = [
   { tag: 'CCTV DEPLOYMENT — 2026', title: 'Placeholder: Retail camera rollout', body: '[Replace with scope: number of cameras, sites covered, and outcome.]' },
@@ -7,6 +8,29 @@ const PROJECTS = [
   { tag: 'CCTV DEPLOYMENT — 2025', title: 'Placeholder: Warehouse surveillance', body: '[Replace with scope.]' },
   { tag: 'IT SUPPORT — 2025', title: 'Placeholder: Managed support contract', body: '[Replace with scope.]' },
   { tag: 'NETWORKING — 2025', title: 'Placeholder: Fibre installation', body: '[Replace with scope.]' },
+];
+
+const PROJECT_STEPS = [
+  {
+    title: 'Site visit & assessment',
+    body: 'We walk the site to understand coverage needs, cabling paths and network requirements.',
+    img: '/brand/hero-office.jpg',
+  },
+  {
+    title: 'Proposal & quote',
+    body: 'A written scope and quote covering equipment, labour and timeline.',
+    img: '/services/card-dev.jpg',
+  },
+  {
+    title: 'Installation',
+    body: 'Cameras, cabling or web build carried out on the agreed schedule.',
+    img: '/services/card-network.jpg',
+  },
+  {
+    title: 'Handover & support',
+    body: 'Walkthrough of the finished system, with ongoing support afterward.',
+    img: '/services/card-support.jpg',
+  },
 ];
 
 export default function Projects() {
@@ -35,44 +59,13 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="section section-alt">
-        <div className="container value-block">
-          <div>
-            <span className="section-label">HOW A PROJECT RUNS</span>
-            <h2>From first call to handover.</h2>
-          </div>
-          <div className="value-list">
-            <div className="value-item">
-              <span className="num">01</span>
-              <div>
-                <p style={{ marginBottom: 6 }}>Site visit &amp; assessment</p>
-                <span className="value-item-desc">We walk the site to understand coverage needs, cabling paths and network requirements.</span>
-              </div>
-            </div>
-            <div className="value-item">
-              <span className="num">02</span>
-              <div>
-                <p style={{ marginBottom: 6 }}>Proposal &amp; quote</p>
-                <span className="value-item-desc">A written scope and quote covering equipment, labour and timeline.</span>
-              </div>
-            </div>
-            <div className="value-item">
-              <span className="num">03</span>
-              <div>
-                <p style={{ marginBottom: 6 }}>Installation</p>
-                <span className="value-item-desc">Cameras, cabling or web build carried out on the agreed schedule.</span>
-              </div>
-            </div>
-            <div className="value-item">
-              <span className="num">04</span>
-              <div>
-                <p style={{ marginBottom: 6 }}>Handover &amp; support</p>
-                <span className="value-item-desc">Walkthrough of the finished system, with ongoing support afterward.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        eyebrow="HOW A PROJECT RUNS"
+        heading="A controlled path from first call to handover."
+        subtext="Four practical stages, presented with the detail your team needs to keep moving."
+        steps={PROJECT_STEPS}
+        defaultActive={0}
+      />
     </>
   );
 }

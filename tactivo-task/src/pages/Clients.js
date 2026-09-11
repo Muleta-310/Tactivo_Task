@@ -17,8 +17,8 @@ export default function Clients() {
         <div className="container">
           <div className="logo-row">
             <div className="logo-cell"><img src="/clients/vivo-energy.png" alt="Vivo Energy" /></div>
-            <div className="logo-cell"><img src="/clients/toyota.jpg" alt="Toyota Zambia" /></div>
-            <div className="logo-cell"><img src="/clients/shaann.jpg" alt="Shaann Carriers & General Dealers" /></div>
+            <div className="logo-cell"><img className="logo-lg" src="/clients/toyota.jpg" alt="Toyota Zambia" /></div>
+            <div className="logo-cell"><img className="logo-lg" src="/clients/shaann.jpg" alt="Shaann Carriers & General Dealers" /></div>
             <div className="logo-cell"><img src="/clients/sapphire.png" alt="Sapphire Energy Company" /></div>
             {Array.from({ length: 4 }).map((_, i) => (
               <div className="logo-cell" key={i}>CLIENT LOGO</div>

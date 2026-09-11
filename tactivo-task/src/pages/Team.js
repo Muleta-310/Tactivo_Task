@@ -55,7 +55,7 @@ export default function Team() {
 
           <div className="leadership-card">
             <div className="leadership-photo">
-              <img src="/team/chairman.jpg" alt="Mr. Tommy Muloboko" />
+              <img src="/team/managing-director.jpg" alt="Mr. Tommy Muloboko" />
               <span className="leadership-badge">01</span>
             </div>
             <div className="leadership-body">

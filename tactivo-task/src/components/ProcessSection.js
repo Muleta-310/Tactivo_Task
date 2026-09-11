@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const STEPS = [
+const DEFAULT_STEPS = [
   {
     title: 'Site assessment',
     body: 'We survey the forecourt, back office and network before proposing a build.',
@@ -28,24 +28,30 @@ const STEPS = [
   },
 ];
 
-export default function ProcessSection() {
-  const [active, setActive] = useState(3); // "Training & handover" shown by default, matching reference
+export default function ProcessSection({
+  eyebrow = 'HOW WE DELIVER',
+  heading = 'A controlled path from site assessment to sign-off.',
+  subtext = 'Five practical stages, presented with the detail your team needs to keep moving.',
+  steps = DEFAULT_STEPS,
+  defaultActive = 0,
+}) {
+  const [active, setActive] = useState(Math.min(defaultActive, steps.length - 1));
 
   function prev() {
-    setActive((a) => (a - 1 + STEPS.length) % STEPS.length);
+    setActive((a) => (a - 1 + steps.length) % steps.length);
   }
   function next() {
-    setActive((a) => (a + 1) % STEPS.length);
+    setActive((a) => (a + 1) % steps.length);
   }
 
-  const current = STEPS[active];
+  const current = steps[active];
 
   return (
     <section className="process-section">
       <div className="container">
-        <span className="process-eyebrow">HOW WE DELIVER</span>
-        <h2>A controlled path from site assessment to sign-off.</h2>
-        <p>Five practical stages, presented with the detail your team needs to keep moving.</p>
+        <span className="process-eyebrow">{eyebrow}</span>
+        <h2>{heading}</h2>
+        <p>{subtext}</p>
 
         <div className="process-feature">
           <div className="process-feature-photo">
@@ -63,7 +69,7 @@ export default function ProcessSection() {
                 </svg>
               </button>
               <div className="process-dots">
-                {STEPS.map((s, i) => (
+                {steps.map((s, i) => (
                   <button
                     key={s.title}
                     className={`process-dot${i === active ? ' active' : ''}`}
@@ -82,7 +88,7 @@ export default function ProcessSection() {
         </div>
 
         <div className="process-steps">
-          {STEPS.map((s, i) => (
+          {steps.map((s, i) => (
             <button
               key={s.title}
               className={`process-step-card${i === active ? ' active' : ''}`}
