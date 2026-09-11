@@ -2,12 +2,12 @@ import React from 'react';
 import ProcessSection from '../components/ProcessSection';
 
 const PROJECTS = [
-  { tag: 'CCTV DEPLOYMENT — 2026', title: 'Placeholder: Retail camera rollout', body: '[Replace with scope: number of cameras, sites covered, and outcome.]' },
-  { tag: 'NETWORKING — 2026', title: 'Placeholder: Office network redesign', body: '[Replace with scope: cabling run, switch/router setup, downtime avoided.]' },
-  { tag: 'WEB DEVELOPMENT — 2026', title: 'Placeholder: Corporate website', body: '[Replace with scope: pages built, CMS used, launch date.]' },
-  { tag: 'CCTV DEPLOYMENT — 2025', title: 'Placeholder: Warehouse surveillance', body: '[Replace with scope.]' },
-  { tag: 'IT SUPPORT — 2025', title: 'Placeholder: Managed support contract', body: '[Replace with scope.]' },
-  { tag: 'NETWORKING — 2025', title: 'Placeholder: Fibre installation', body: '[Replace with scope.]' },
+  { tag: 'CCTV DEPLOYMENT — 2026', title: 'Placeholder: Retail camera rollout', body: '[Replace with scope: number of cameras, sites covered, and outcome.]', img: '/services/card-cctv.jpg' },
+  { tag: 'NETWORKING — 2026', title: 'Placeholder: Office network redesign', body: '[Replace with scope: cabling run, switch/router setup, downtime avoided.]', img: '/services/card-network.jpg' },
+  { tag: 'WEB DEVELOPMENT — 2026', title: 'Placeholder: Corporate website', body: '[Replace with scope: pages built, CMS used, launch date.]', img: '/services/card-dev.jpg' },
+  { tag: 'CCTV DEPLOYMENT — 2025', title: 'Placeholder: Warehouse surveillance', body: '[Replace with scope.]', img: '/brand/hero-office.jpg' },
+  { tag: 'IT SUPPORT — 2025', title: 'Placeholder: Managed support contract', body: '[Replace with scope.]', img: '/services/card-support.jpg' },
+  { tag: 'NETWORKING — 2025', title: 'Placeholder: Fibre installation', body: '[Replace with scope.]', img: '/services/card-network.jpg' },
 ];
 
 const PROJECT_STEPS = [
@@ -50,10 +50,15 @@ export default function Projects() {
       <section className="section">
         <div className="grid-3 container" style={{ padding: '0 28px' }}>
           {PROJECTS.map((p) => (
-            <div className="card" key={p.title}>
-              <span className="tag">{p.tag}</span>
-              <h3>{p.title}</h3>
-              <p>{p.body}</p>
+            <div className="card proj-card" key={p.title}>
+              <div className="proj-card-photo">
+                <img src={p.img} alt={p.title.replace('Placeholder: ', '')} />
+              </div>
+              <div className="proj-card-body">
+                <span className="tag">{p.tag}</span>
+                <h3>{p.title}</h3>
+                <p>{p.body}</p>
+              </div>
             </div>
           ))}
         </div>
