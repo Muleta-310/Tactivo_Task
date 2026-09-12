@@ -9,22 +9,24 @@ export default function Home() {
         style={{ backgroundImage: "url('/brand/hero-office.jpg')" }}
       >
         <div className="brand-hero-inner">
-          <span className="brand-hero-eyebrow">TECHNOLOGY / RESILIENT OPERATIONS</span>
-          <h1>We don't simply want to consume technology. We want to create it.</h1>
-          <p>Practical digital capability for organizations shaping what comes next.</p>
-          <div className="brand-hero-ctas">
-            <a href="#/contact" className="brand-btn-primary">
-              Start a conversation
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                <path d="M7 17L17 7M9 7h8v8" />
-              </svg>
-            </a>
-            <a href="#/about" className="brand-link-arrow">
-              Discover Tactivo
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                <path d="M7 17L17 7M9 7h8v8" />
-              </svg>
-            </a>
+          <div className="brand-hero-content">
+            <span className="brand-hero-eyebrow">TECHNOLOGY / RESILIENT OPERATIONS</span>
+            <h1>We don't simply want to consume technology. We want to create it.</h1>
+            <p>Practical digital capability for organizations shaping what comes next.</p>
+            <div className="brand-hero-ctas">
+              <a href="#/contact" className="brand-btn-primary">
+                Start a conversation
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <path d="M7 17L17 7M9 7h8v8" />
+                </svg>
+              </a>
+              <a href="#/about" className="brand-link-arrow">
+                Discover Tactivo
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <path d="M7 17L17 7M9 7h8v8" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
